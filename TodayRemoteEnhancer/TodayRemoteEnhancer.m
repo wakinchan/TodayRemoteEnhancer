@@ -73,7 +73,7 @@ static void SendSingnalWithName(NSString *name)
 @end
 
 @implementation TodayRemoteEnhancer
-static TodayRemoteEnhancer* tre = nil;
+static TodayRemoteEnhancer *tre = nil;
 + (TodayRemoteEnhancer *)sharedInstance
 {
     if (!tre) {
@@ -84,7 +84,7 @@ static TodayRemoteEnhancer* tre = nil;
 
 + (void)load
 {
-    TodayRemoteEnhancer* tre = [TodayRemoteEnhancer sharedInstance];
+    TodayRemoteEnhancer *tre = [TodayRemoteEnhancer sharedInstance];
     if (tre) {
         method_exchangeImplementations(class_getInstanceMethod(objc_getClass("RPMenulet"), @selector(processInput:fromSocket:)),
                                        class_getInstanceMethod(objc_getClass("NSObject"), @selector(__processInput:fromSocket:)));
